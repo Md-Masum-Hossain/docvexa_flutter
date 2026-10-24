@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../features/doctors/presentation/doctor_pages.dart';
 import '../../features/home/presentation/home_page.dart';
 import '../../shared/widgets/design_placeholder_page.dart';
 import 'user_role.dart';
@@ -20,6 +21,11 @@ class _AppShellState extends State<AppShell> {
     return switch (widget.role) {
       UserRole.patient => const [
         _ShellDestination('Home', Icons.home_outlined, HomePage()),
+        _ShellDestination(
+          'Doctors',
+          Icons.medical_information_outlined,
+          DoctorsPage(),
+        ),
         _ShellDestination(
           'Appointments',
           Icons.calendar_month_outlined,
