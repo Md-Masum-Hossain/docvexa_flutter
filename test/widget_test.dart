@@ -51,9 +51,6 @@ void main() {
     await tester.tap(find.text('Appointments'));
     await tester.pumpAndSettle();
 
-    expect(
-      find.text('Appointment history will appear here once connected.'),
-      findsOneWidget,
-    );
+    expect(find.text('My appointments'), findsOneWidget);
   });
 }

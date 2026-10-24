@@ -4,6 +4,7 @@ import '../../../core/network/api_client.dart';
 import '../../../core/theme/app_tokens.dart';
 import '../../../core/theme/app_theme.dart';
 import '../../../shared/widgets/status_views.dart';
+import '../../appointments/presentation/appointment_pages.dart';
 import '../data/doctor_models.dart';
 import '../data/doctor_repository.dart';
 
@@ -330,9 +331,9 @@ class _DoctorDetails extends StatelessWidget {
             width: double.infinity,
             child: ElevatedButton.icon(
               onPressed: () {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Appointment booking is coming in Phase 5.'),
+                Navigator.of(context).push(
+                  MaterialPageRoute<void>(
+                    builder: (_) => BookingPage(doctor: doctor),
                   ),
                 );
               },

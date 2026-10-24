@@ -30,6 +30,18 @@ class ApiClient {
     return _send('POST', path, body: body, accessToken: accessToken);
   }
 
+  Future<Map<String, dynamic>> patch(
+    String path, {
+    Object? body,
+    String? accessToken,
+  }) {
+    return _send('PATCH', path, body: body, accessToken: accessToken);
+  }
+
+  Future<Map<String, dynamic>> delete(String path, {String? accessToken}) {
+    return _send('DELETE', path, accessToken: accessToken);
+  }
+
   Future<Map<String, dynamic>> _send(
     String method,
     String path, {

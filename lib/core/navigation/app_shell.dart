@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 import '../../features/doctors/presentation/doctor_pages.dart';
+import '../../features/appointments/presentation/appointment_pages.dart';
 import '../../features/home/presentation/home_page.dart';
+import '../../features/payments/presentation/payment_pages.dart';
 import '../../shared/widgets/design_placeholder_page.dart';
 import 'user_role.dart';
 
@@ -29,12 +31,9 @@ class _AppShellState extends State<AppShell> {
         _ShellDestination(
           'Appointments',
           Icons.calendar_month_outlined,
-          DesignPlaceholderPage(
-            title: 'Appointments',
-            message: 'Appointment history will appear here once connected.',
-            icon: Icons.calendar_month_outlined,
-          ),
+          AppointmentsPage(),
         ),
+        _ShellDestination('Payments', Icons.payments_outlined, PaymentsPage()),
         _ShellDestination(
           'Messages',
           Icons.chat_bubble_outline_rounded,
